@@ -8,13 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, Controller {
+
+    weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        title = "Home" 
     }
 
-
+    @IBAction private func nextOnTap(_ sender: UIButton) {
+        // coordinator?.next()
+        coordinator?.show(NextCoordinator.self)
+    }
 }
 
